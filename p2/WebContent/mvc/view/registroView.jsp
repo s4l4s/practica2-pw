@@ -5,28 +5,32 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Acceso</title>
+<title>Registro</title>
 </head>
 <body>
+
 	<%
-	String nextPage = "../controller/loginController.jsp";
+	String nextPage = "../controller/registroController.jsp";
 	String message = request.getParameter("message");
-	if( message == null ) message = "";
+	if(message == null) message = "";
 	
-	//Comprobamos si el usuario está logado, aunque no debería de ocurrir. En ese caso lo devolvemos al index
-	if(CustomerBean != null && !CustomerBean.getEmailUser().equals("")){
+	//Comprobar que no esta logado (no debería)
+	if(CustomerBean !=null && !CustomerBean.getEmailUser().equals("")){
 		nextPage = "../../index.jsp";
-	} else
-	//Si no lo está, recogemos los datos del login para enviarlos al controlador
-	{
+	} else {
+	//Recogemos los datos del registro
 	%>
 	<%= message
 	%><br/><br/>
-	<form method="post" action="../controller/loginController.jsp">
+	<form method="post" action="../controller/registroController.jsp">
 		<label for="email">Email: </label>
 		<input type="text" name="email"><br/>
 		<label for="password">Password: </label>
 		<input type="text" name="password"><br/>
+		<label for="firstname">First Name: </label>
+		<input type="text" name="firstname"><br/>
+		<label for="lastname">Last Name: </label>
+		<input type="text" name="lastname"><br/>
 		<input type="submit" value="Submit">
 	</form>
 	<%

@@ -11,6 +11,8 @@ public class CustomerBean implements java.io.Serializable {
 	private String firstNameUser = "";
 	
 	private String lastNameUser = "";
+	
+	private int contador = 3;
 
 	public String getEmailUser() {
 		return emailUser;
@@ -38,6 +40,14 @@ public class CustomerBean implements java.io.Serializable {
 
 	public String getLastNameUser() {
 		return lastNameUser;
+	}
+
+	public int getContador() {
+		return contador;
+	}
+
+	public void setContador(int contador) {
+		this.contador = contador;
 	}
 
 	public void setLastNameUser(String lastNameUser) {

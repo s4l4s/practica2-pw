@@ -76,7 +76,7 @@ public class UserDAO extends DAO {
 	}
 
 	@Override
-	public User queryByEmail(String email, String password) {
+	public User queryByEmail(String email) {
 		Statement stmt = null;
 		Properties prop = new Properties();
 		InputStream inputStream = this.getClass().getResourceAsStream("/sql.properties");
@@ -87,13 +87,11 @@ public class UserDAO extends DAO {
 				Connection conex=getConnection();
 				stmt = conex.createStatement();
 			    ResultSet rs = stmt.executeQuery(query + email);
-			    String passwordbbdd = rs.getString("password");
-			    if(passwordbbdd.equals(password)) {
-			    	String firstname = rs.getString("firstname");
-			    	String lastname = rs.getString("lastname");
-			    	User usuario = new User(email,password,firstname,lastname);
-			    	return usuario;
-			    }
+			    String password = rs.getString("password");
+			    String firstname = rs.getString("firstname");
+			    String lastname = rs.getString("lastname");
+			    User usuario = new User(email,password,firstname,lastname);
+			    return usuario;
 			}
 			catch(Exception e1){
 				System.out.println(e1);

@@ -11,6 +11,6 @@ public abstract class DAO {
 	
 	public abstract int modify(User usuario);
 	
-	public abstract User queryByEmail(String email, String password);
+	public abstract User queryByEmail(String email);
 
 }

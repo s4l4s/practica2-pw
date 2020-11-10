@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="CustomerBean" scope="session" class="es.uco.pw.display.javabean.CustomerBean"></jsp:useBean>
 
@@ -23,7 +23,7 @@
 	<%
 	}else{
 	%>
-		¡¡Bienvenido <jsp:getProperty property="firstNameUser" name="CustomerBean"/> <jsp:getProperty property="lastNameUser" name="CustomerBean"/>
+		¡¡Bienvenido <jsp:getProperty property="firstNameUser" name="CustomerBean"/> <jsp:getProperty property="lastNameUser" name="CustomerBean"/><br/>
 		(<jsp:getProperty property="emailUser" name="CustomerBean"/>)
 		<a href="p2/mvc/controller/modifyController.jsp">Modificar</a>
 		<a href="p2/mvc/controller/logoutController.jsp">Desconectar</a>
