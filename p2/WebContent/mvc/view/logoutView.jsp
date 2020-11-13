@@ -13,7 +13,7 @@
 	if(CustomerBean != null && !CustomerBean.getEmailUser().equals("")){
 	%>
 		message <br/>
-		<a href="p2/index.jsp">Volver a inicio</a>
+		<a href="ej2.2/index.jsp">Volver a inicio</a>
 	<%
 	}
 	%>

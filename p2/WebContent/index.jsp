@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Práctica 2</title>
+<title>Practica 2</title>
 </head>
 <body>
 	<%
@@ -18,15 +18,15 @@
 	if( CustomerBean == null || CustomerBean.getEmailUser()=="" ){
 		//si el usuario no esta logado
 	%>
-		<a href="p2/mvc/controller/loginController.jsp">Acceder</a>
-		<a href="p2/mvc/controller/registroController.jsp">Registro</a>
+		<a href="mvc/controller/loginController.jsp">Acceder</a>
+		<a href="mvc/controller/registroController.jsp">Registro</a>
 	<%
 	}else{
 	%>
 		¡¡Bienvenido <jsp:getProperty property="firstNameUser" name="CustomerBean"/> <jsp:getProperty property="lastNameUser" name="CustomerBean"/><br/>
 		(<jsp:getProperty property="emailUser" name="CustomerBean"/>)
-		<a href="p2/mvc/controller/modifyController.jsp">Modificar</a>
-		<a href="p2/mvc/controller/logoutController.jsp">Desconectar</a>
+		<a href="mvc/controller/modifyController.jsp">Modificar</a>
+		<a href="mvc/controller/logoutController.jsp">Desconectar</a>
 	<%
 	}
 	%>
